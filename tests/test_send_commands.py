@@ -115,5 +115,5 @@ async def test_command_with_concurrently_closed_connection():
 
     with pytest.raises(ConnectionClosedError, match="^Connection is closed$"):
         await asyncio.wait_for(
-            asyncio.gather(wait_and_close(), blocking_wait_and_pub()), timeout=5,
+            asyncio.gather(wait_and_close(), blocking_wait_and_pub()), timeout=1,
         )
